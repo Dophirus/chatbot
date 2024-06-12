@@ -18,6 +18,31 @@ body {
   background-color: #fff;
 }
 
+#botListContainer {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+#botList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.bot-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.bot-item:hover {
+  background-color: #f0f0f0;
+}
+
 #chatBox {
   flex: 1;
   padding: 10px;
