@@ -6,9 +6,13 @@ class Bot3 extends Bot {
     super('WeatherBot');
     this.addCommand('hello', () => 'Hello from WeatherBot !');
     this.addCommand('help', () => 'Available commands: hello, help, weather');
-    this.addCommand('weather', async (location) => {
-      const data = await fetchWeatherData(location);
-      return `Weather in ${location}: ${data}`;
+    this.addCommand('weather', async (city) => {
+      const data = await fetchWeatherData(city);
+      if (data && data.current_weather) {
+        return `La météo actuelle à ${city} est de ${data.current_weather.temperature}°C`;
+      } else {
+        return 'Impossible de récupérer les données météorologiques pour le moment';
+      }
     });
   }
 }

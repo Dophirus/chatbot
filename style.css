@@ -50,21 +50,46 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
-.message {
+.message-container {
+  display: flex;
   margin: 10px 0;
+  align-items: center;
+}
+
+.message-container.user-message {
+  justify-content: flex-end;
+}
+
+.message-container.bot-message {
+  justify-content: flex-start;
+}
+
+.message {
+  margin: 0 10px;
   padding: 10px;
   border-radius: 5px;
-  max-width: 100%;
+  max-width: 250px;
 }
 
-.user-message {
+.user-message .message {
   background-color: #d1e7dd;
-  align-self: flex-end;
 }
 
-.bot-message {
+.bot-message .message {
   background-color: #f8d7da;
-  align-self: flex-start;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.message-info {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 5px;
 }
 
 #inputContainer {
