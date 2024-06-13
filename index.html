@@ -7,17 +7,20 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div id="chatContainer">
+  <div id="mainContainer">
     <div id="botListContainer">
       <h2>Bots Disponibles</h2>
       <ul id="botList"></ul>
     </div>
-    <div id="chatBox"></div>
-    <div id="inputContainer">
-      <input type="text" id="messageInput" placeholder="Tapez votre message ici...">
-      <button id="sendButton">Envoyer</button>
+    <div id="chatContainer">
+      <div id="chatBox"></div>
+      <div id="inputContainer">
+        <input type="text" id="messageInput" placeholder="Tapez votre message ici...">
+        <button id="sendButton">Envoyer</button>
+      </div>
     </div>
   </div>
+  <button id="clearButton">Effacer le LocalStorage</button>
   <script type="module" src="/main.js"></script>
 </body>
 </html>

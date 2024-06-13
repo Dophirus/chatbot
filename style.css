@@ -8,19 +8,20 @@ body {
   margin: 0;
 }
 
-#chatContainer {
-  width: 400px;
-  height: 600px;
+#mainContainer {
+  display: flex;
+  width: 90%;
+  height: 85vh;
   border: 1px solid #ccc;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
   background-color: #fff;
 }
 
 #botListContainer {
+  width: 20%;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
 }
 
 #botList {
@@ -41,6 +42,12 @@ body {
 
 .bot-item:hover {
   background-color: #f0f0f0;
+}
+
+#chatContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
 }
 
 #chatBox {
@@ -117,4 +124,17 @@ body {
 
 #sendButton:hover {
   background-color: #0056b3;
+}
+
+#clearButton {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }

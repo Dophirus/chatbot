@@ -1,19 +1,15 @@
-import Bot1 from '../chatbot/bots/bot1';
-import Bot2 from '../chatbot/bots/bot2';
-import Bot3 from '../chatbot/bots/bot3';
+import Bot1 from './bots/dictionaryBot';
+import Bot2 from './bots/animeBot';
+import Bot3 from './bots/weatherBot';
 
-const bots = [
-  new Bot1(),
-  new Bot2(),
-  new Bot3(),
-];
+const bots = [new Bot1(), new Bot2(), new Bot3()];
 
 document.addEventListener('DOMContentLoaded', () => {
   function displayBots() {
     const botList = document.getElementById('botList');
     bots.forEach(bot => {
       const botItem = document.createElement('li');
-      botItem.textContent = bot.name; // Utilisez la propriété name des bots
+      botItem.textContent = bot.name;
       botItem.className = 'bot-item';
       botList.appendChild(botItem);
     });
@@ -31,9 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     messages.push({ sender, message, className, timestamp });
     localStorage.setItem('messages', JSON.stringify(messages));
   }
-
-  displayBots();
-  loadMessages();
 
   document.getElementById('sendButton').addEventListener('click', sendMessage);
   document.getElementById('messageInput').addEventListener('keypress', (e) => {
@@ -66,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function displayMessage(sender, message, className, timestamp) {
     const chatBox = document.getElementById('chatBox');
     if (!chatBox) {
-      console.error('Element with ID "chatBox" not found.');
+      console.error(`L'élément chatBox est introuvable.`);
       return;
     }
 
@@ -95,4 +88,15 @@ document.addEventListener('DOMContentLoaded', () => {
     chatBox.appendChild(messageContainer);
     chatBox.scrollTop = chatBox.scrollHeight;
   }
+
+  const clearButton = document.getElementById('clearButton');
+  clearButton.addEventListener('click', () => {
+    localStorage.clear();
+    alert('Le localStorage a été effacé.');
+    const chatBox = document.getElementById('chatBox');
+    chatBox.innerHTML = '';
+  });
+
+  displayBots();
+  loadMessages();
 });
