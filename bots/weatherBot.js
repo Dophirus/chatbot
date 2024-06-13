@@ -1,11 +1,11 @@
 import Bot from './bot';
 import { fetchWeatherData } from '../services/weatherService';
 
-class Bot3 extends Bot {
+class WeatherBot extends Bot {
   constructor() {
     super('WeatherBot');
     this.addCommand('hello', () => 'Bonjour, je suis WeatherBot !');
-    this.addCommand('help', () => 'Commandes disponibles: hello, help, weather <ville>');
+    this.addCommand('help', () => 'Commandes disponibles: hello, help, weather <ville (en anglais)>');
     this.addCommand('weather', async (city) => {
       const data = await fetchWeatherData(city);
       if (data && data.current_weather) {
@@ -17,4 +17,4 @@ class Bot3 extends Bot {
   }
 }
 
-export default Bot3;
+export default WeatherBot;

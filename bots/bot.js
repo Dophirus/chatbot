@@ -6,7 +6,6 @@ class Bot {
   
     addCommand(trigger, action) {
       this.commands[trigger] = action;
-      console.log(`Command added to ${this.name}: ${trigger}`);
     }
   
     respond(message) {

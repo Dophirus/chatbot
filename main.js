@@ -1,8 +1,8 @@
-import Bot1 from './bots/dictionaryBot';
-import Bot2 from './bots/animeBot';
-import Bot3 from './bots/weatherBot';
+import DictionaryBot from './bots/dictionaryBot';
+import AnimeBot from './bots/animeBot';
+import WeatherBot from './bots/weatherBot';
 
-const bots = [new Bot1(), new Bot2(), new Bot3()];
+const bots = [new DictionaryBot(), new AnimeBot(), new WeatherBot()];
 
 document.addEventListener('DOMContentLoaded', () => {
   function displayBots() {
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     messageInfo.textContent = `${sender} - ${timestamp}`;
 
     const messageText = document.createElement('div');
-    messageText.textContent = message;
+    messageText.innerHTML = message;
 
     messageElement.appendChild(messageInfo);
     messageElement.appendChild(messageText);

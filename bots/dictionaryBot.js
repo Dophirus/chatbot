@@ -1,11 +1,11 @@
 import Bot from './bot';
 import { fetchDictionaryData } from '../services/dictionaryService';
 
-class Bot1 extends Bot {
+class DictionaryBot extends Bot {
     constructor() {
       super('DictionaryBot');
       this.addCommand('hello', () => 'Bonjour, je suis DictionaryBot !');
-      this.addCommand('help', () => 'Commandes disponibles: hello, help, define <mot>');
+      this.addCommand('help', () => 'Commandes disponibles: hello, help, define <mot (en anglais)>');
       this.addCommand('define', async (word) => {
         const data = await fetchDictionaryData(word);
         if (data){
@@ -17,4 +17,4 @@ class Bot1 extends Bot {
     }
   }
   
-  export default Bot1;
+  export default DictionaryBot;
